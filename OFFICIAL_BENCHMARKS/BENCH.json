@@ -1,0 +1,288 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "DRILLING",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\OIL_GAS\\DRILLING\\UPSTREAM_CLONE",
+    "git": {
+      "head": "c9de0bba1c55225bbdbb2a0eca75f63cc3b9279b",
+      "url": "https://github.com/APMonitor/drilling",
+      "branch": "master",
+      "committed_at": "2019-12-19T12:06:33-07:00"
+    }
+  },
+  "metrics": {
+    "files_total": 42,
+    "source_files_scanned": 32,
+    "lines_of_code": 3586,
+    "languages": {
+      ".m": 28,
+      ".py": 4,
+      ".md": 3,
+      ".csv": 3,
+      ".png": 2,
+      "(none)": 1,
+      ".apm": 1
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 15,
+    "files_with_findings": 12,
+    "severity": {
+      "high": 5,
+      "medium": 1,
+      "low": 9
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 5,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "combined/apm.py",
+            "line": 293,
+            "cwe": "CWE-95",
+            "snippet": "value = eval(f.read())"
+          },
+          {
+            "severity": "high",
+            "file": "combined/apm/apm.m",
+            "line": 34,
+            "cwe": "CWE-120",
+            "snippet": "newline = sprintf('\\r');"
+          },
+          {
+            "severity": "high",
+            "file": "combined/apm/apm_id.m",
+            "line": 161,
+            "cwe": "CWE-95",
+            "snippet": "eval(['ypred(' int2str(i) ',' int2str(j) ') = sol.x.y' int2str(i) int2str(j) ';']);"
+          },
+          {
+            "severity": "high",
+            "file": "combined/apm/apm_sol.m",
+            "line": 74,
+            "cwe": "CWE-95",
+            "snippet": "eval(str);"
+          },
+          {
+            "severity": "high",
+            "file": "combined/apm/t0_load.m",
+            "line": 28,
+            "cwe": "CWE-120",
+            "snippet": "newline = sprintf('\\r');"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 0,
+        "findings": []
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 9,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "combined/apm.py",
+            "line": 642,
+            "cwe": "CWE-319",
+            "snippet": "server = 'http://byu.apmonitor.com'"
+          },
+          {
+            "severity": "low",
+            "file": "combined/drilling.m",
+            "line": 6,
+            "cwe": "CWE-319",
+            "snippet": "s = 'http://byu.apmonitor.com';"
+          },
+          {
+            "severity": "low",
+            "file": "combined/drilling.py",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "s = 'http://byu.apmonitor.com'"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_id.m",
+            "line": 116,
+            "cwe": "CWE-319",
+            "snippet": "s = 'http://byu.apmonitor.com';"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_linprog.m",
+            "line": 257,
+            "cwe": "CWE-319",
+            "snippet": "s = 'http://xps.apmonitor.com';"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_option.m",
+            "line": 22,
+            "cwe": "CWE-319",
+            "snippet": "%    http://apmonitor.com/wiki/index.php/Main/DbsGlobal"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_quadprog.m",
+            "line": 27,
+            "cwe": "CWE-319",
+            "snippet": "% disp('APM MATLAB available for download at http://apmonitor.com')"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_solve.m",
+            "line": 36,
+            "cwe": "CWE-319",
+            "snippet": "server = 'http://byu.apmonitor.com';"
+          },
+          {
+            "severity": "low",
+            "file": "combined/apm/apm_tag.m",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "%    http://apmonitor.com/wiki/index.php/Main/DbsGlobal"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "combined/apm.py",
+            "line": 103,
+            "cwe": "CWE-918",
+            "snippet": "f = urllib.urlopen(url)"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:574bfa97-7b2c-52bd-8670-cdcd71a1a144",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T05:48:50Z",
+      "component": {
+        "type": "application",
+        "name": "DRILLING",
+        "version": "c9de0bba1c55",
+        "bom-ref": "pkg:generic/anticloud/DRILLING@c9de0bba1c55",
+        "purl": "pkg:generic/anticloud/DRILLING@c9de0bba1c55",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "c9de0bba1c55225bbdbb2a0eca75f63cc3b9279b"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/APMonitor/drilling"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 3.17
+}
